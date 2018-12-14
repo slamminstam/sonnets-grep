@@ -1,0 +1,37 @@
+Example grep commands:  
+
+grep -B 15 -w 'rose' sonnet.txt
+grep -B 15 -w 'rose' sonnets.txt 
+grep -B 15 -w 'rose' sonnets.txt | grep 'SONNET*'
+grep -w -B 16 'rose' sonnets.txt | grep 'SONNET'
+cat sonnets.txt | grep -w -B16 'rose' | grep 'SONNET'
+grep -w -B16 'rose' sonnets.txt | grep 'SONNET'
+grep -B 16 -w rose[^s\"] sonnets.txt | grep SONNET*
+grep -w -e SONNET -e rose[^s\"\] sonnets.txt | grep -B 1 rose | grep SONNET
+grep -w -e SONNET -e rose[^s\"\] sonnets.txt | grep -B 1 rose
+grep -w -B16 'rose' sonnets.txt | grep 'SONNET'
+grep -w -B 16 'rose' sonnets.txt | grep 'SONNET'
+grep -w -B 16 'rose' sonnets.txt
+grep -w -e SONNET -e rose[^s\"\] sonnets.txt | grep -B 1 rose
+grep -w -e SONNET -e rose sonnets.txt | grep -B 1 rose[^s\"\]
+
+Expected Output - 6 sonnets:
+
+SONNET I
+That thereby beauty's rose might never die,
+--
+SONNET LIV
+The rose looks fair, but fairer we it deem
+--
+SONNET LXVII
+Roses of shadow, since his rose is true?
+--
+SONNET XCV
+Which, like a canker in the fragrant rose,
+--
+SONNET XCVIII
+Nor praise the deep vermilion in the rose; 10
+--
+SONNET CIX
+Save thou, my rose; in it thou art my all. 14
+
